@@ -4,6 +4,7 @@ import Results from "./Results";
 import useBreedList from "./useBreedList";
 import fetchSearch from "./fetchSearch";
 import AdoptedPetContext from "./AdoptedPetContext";
+import PetCart from "./PetCart";
 
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
@@ -35,16 +36,7 @@ const SearchParams = () => {
           setRequestParams(obj);
         }}
       >
-        {adoptedPet ? (
-          <div className="w-fill my-6 mx-0 flex h-32 items-center justify-center overflow-hidden border-2 border-[#333] bg-orange-100 p-4 shadow-lg">
-            <img
-              className="min-h-24 w-24"
-              src={adoptedPet.images[0]}
-              alt={adoptedPet.name}
-            />
-            <h1 className="ml-4">{adoptedPet.name}</h1>
-          </div>
-        ) : null}
+        <PetCart adoptedPet={adoptedPet} />
         <label htmlFor="location">
           Location
           <input
