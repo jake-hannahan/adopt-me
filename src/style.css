@@ -2,14 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    .search-input {
-      @apply w-60 mb-5 block;
-    }
+@layer base {
+  body {
+    font-family: "Comic Sans MS";
   }
+}
 
-  @layer utilities {
-    .grayed-out-disabled {
-      @apply disabled:opacity-50;
-    }
+@layer utilities {
+  .grayed-out-disabled {
+    @apply disabled:opacity-50;
   }
+  .image-container {
+    clip-path: circle(50% at 50% 50%);
+  }
+}
